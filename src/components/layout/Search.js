@@ -8,18 +8,21 @@ import "./Search.css";
 const Search = () => {
   const [searchText, setSearchText] = useState("");
   const [timer, setTimer] = useState();
-  const [blur, setBlur] = useState(false);
+  const [showAutoComplete, setShowAutoComplete] = useState(false);
   const movieContext = useContext(MovieContext);
   const { searchMovies, searchMovieList } = movieContext;
   useEffect(() => {
     if (timer) {
       clearTimeout(timer);
     }
-    setTimer(
-      setTimeout(() => {
-        searchMovies(searchText);
-      }, 500)
-    );
+    if (searchText !== "") {
+      setTimer(
+        setTimeout(() => {
+          searchMovies(searchText);
+        }, 500)
+      );
+    }
+    //eslint-disable-next-line
   }, [searchText]);
 
   const onChange = event => {
@@ -31,17 +34,20 @@ const Search = () => {
     searchMovies(searchText);
   };
 
-  const onBlur = event => {
-    setBlur(true);
-  };
-
-  const onFocus = () => {
-    setBlur(false);
+  const onClick = event => {
+    if (
+      event.target.name === "searchText" ||
+      event.target.className === "auto-complete"
+    ) {
+      setShowAutoComplete(true);
+    } else {
+      setShowAutoComplete(false);
+    }
   };
 
   return (
     <div className="searchbar">
-      <div className="input">
+      <div className="input" onClick={onClick}>
         <form className="form-input" onSubmit={onSubmit}>
           <input
             type="text"
@@ -50,16 +56,14 @@ const Search = () => {
             name="searchText"
             value={searchText}
             onChange={onChange}
-            onBlur={onBlur}
-            onFocus={onFocus}
           />
           <span className="search-icon-container">
             <i className="fas fa-search search-icon"></i>
           </span>
         </form>
-        {searchMovieList.length > 0 && searchText !== "" && !blur && (
-          <AutoComplete movies={searchMovieList} />
-        )}
+        {searchMovieList.length > 0 &&
+          searchText !== "" &&
+          showAutoComplete && <AutoComplete movies={searchMovieList} />}
       </div>
     </div>
   );

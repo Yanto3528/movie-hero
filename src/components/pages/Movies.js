@@ -1,6 +1,8 @@
 import React, { useEffect, useContext, useState, Fragment } from "react";
+import { Redirect } from "react-router-dom";
 
 import Loading from "../layout/Loading";
+import NotFound from "./NotFound";
 
 import MovieContext from "../context/movie/movieContext";
 import {
@@ -17,7 +19,6 @@ const Movies = ({
   }
 }) => {
   const movieContext = useContext(MovieContext);
-  const [currentPage, setCurrentPage] = useState(parseInt(page));
   const [availablePages, setAvailablePages] = useState([]);
   const {
     getMovieList,
@@ -25,7 +26,6 @@ const Movies = ({
     upcomingMovies,
     popularMovies,
     totalPages,
-    setLoading,
     loading
   } = movieContext;
 
@@ -41,6 +41,7 @@ const Movies = ({
     type = GET_POPULAR_MOVIES;
     movies = popularMovies;
   }
+  const currentPage = parseInt(page);
   const path = `/movie/list/${name}`;
 
   useEffect(() => {
@@ -55,7 +56,12 @@ const Movies = ({
 
   useEffect(() => {
     getMovieList(name.replace("-", "_"), currentPage, type);
+    //eslint-disable-next-line
   }, []);
+
+  if (currentPage > totalPages) {
+    return <Redirect to={NotFound} />;
+  }
 
   if (loading) {
     return <Loading />;

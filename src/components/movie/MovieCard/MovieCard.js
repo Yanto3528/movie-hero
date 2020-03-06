@@ -42,7 +42,7 @@ const MovieCard = ({ movie }) => {
             href={`/genre/${genreObj.id}/${convertToUrlString(
               genreObj.name
             )}/1`}
-            className="movie-genre"
+            className="movie-genre genre-bottom"
             key={genreObj.id}
           >
             {genreObj.name}

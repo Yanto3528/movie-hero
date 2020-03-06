@@ -11,7 +11,6 @@ const Genre = ({
   }
 }) => {
   const movieContext = useContext(MovieContext);
-  const [currentPage, setCurrentPage] = useState(parseInt(page));
   const [availablePages, setAvailablePages] = useState([]);
   const {
     getGenreBasedMovies,
@@ -21,6 +20,7 @@ const Genre = ({
   } = movieContext;
 
   const path = `/genre/${id}/${name}`;
+  const currentPage = parseInt(page);
 
   useEffect(() => {
     getGenreBasedMovies(id, currentPage);

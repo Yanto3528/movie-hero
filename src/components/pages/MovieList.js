@@ -1,20 +1,16 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext } from "react";
 
 import MovieContext from "../context/movie/movieContext";
 
 import MoviesGrid from "../movie/MoviesGrid/MoviesGrid";
 import Pagination from "../layout/Pagination";
-import Loading from "../layout/Loading";
 
 const MovieList = ({ movies, currentPage, name, path, availablePages }) => {
   const movieContext = useContext(MovieContext);
 
-  const { loading, totalPages } = movieContext;
+  const { totalPages } = movieContext;
   const title = name.replace("-", " ");
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
   return (
     <Fragment>
       {movies && totalPages && (
