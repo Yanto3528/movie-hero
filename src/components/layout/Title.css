@@ -1,0 +1,44 @@
+.title {
+  width: 100%;
+  border-bottom: 1px solid white;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.title-heading {
+  font-size: 3rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.title-more,
+.title-more i {
+  color: #9c9c9c;
+  transition: color 0.4s;
+}
+
+.title-more:hover,
+.title-more:hover i {
+  color: var(--primary-color);
+}
+
+@media only screen and (max-width: 670px) {
+  .title-heading {
+    font-size: 2.5rem;
+  }
+  .title-more {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .title-heading {
+    font-size: 1.8rem;
+  }
+  .title-more {
+    font-size: 1.2rem;
+  }
+}

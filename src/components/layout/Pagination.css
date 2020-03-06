@@ -1,0 +1,38 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 3rem;
+}
+
+.pagination-link:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.pagination-link {
+  transition: all 0.4s;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.pagination-link:hover {
+  color: var(--primary-color);
+}
+
+.current-active {
+  color: var(--primary-color);
+}
+
+.back {
+  margin-right: 0;
+}
+
+.ellipses {
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 400px) {
+  .pagination-link {
+    font-size: 1.6rem;
+  }
+}

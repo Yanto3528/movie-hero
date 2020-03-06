@@ -1,0 +1,70 @@
+.movies-trailer-slider {
+  margin-top: 10rem;
+  padding: 5rem 0;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.movies-trailer-slider-container {
+  width: 70%;
+  position: relative;
+}
+
+.movies-trailer-slider-heading {
+  border-bottom: 1px solid white;
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+}
+
+.movies-trailer-slider-header {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+}
+
+.movie-trailer-container {
+  overflow: hidden;
+}
+
+.movie-trailer-wrapper {
+  position: relative;
+  display: flex;
+  transition: all 0.4s ease-in-out;
+}
+
+.next-trailer,
+.prev-trailer {
+  position: absolute;
+  color: white;
+  font-size: 10rem;
+  cursor: pointer;
+}
+
+.next-trailer {
+  bottom: 0;
+  right: -1rem;
+  transform: translate(100%, -100%);
+}
+
+.prev-trailer {
+  bottom: 0;
+  left: -1rem;
+  transform: translate(-100%, -100%);
+}
+
+@media only screen and (max-width: 1024px) {
+  .next-trailer,
+  .prev-trailer {
+    font-size: 7rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .next-trailer,
+  .prev-trailer {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,37 @@
+.detail {
+  border-bottom: 1px solid white;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.detail h3 {
+  color: white;
+  font-size: 2rem;
+}
+
+.detail p {
+  margin: 0.5rem 0;
+}
+
+.detail i {
+  color: #ffc000;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .detail {
+    margin-bottom: 0.5rem;
+  }
+  .detail p {
+    margin: 0.3rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .detail p {
+    font-size: 1.2rem;
+  }
+  .detail h3 {
+    font-size: 1.6rem;
+  }
+}

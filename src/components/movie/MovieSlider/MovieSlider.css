@@ -1,0 +1,24 @@
+.movie-slider-container {
+  position: relative;
+}
+
+.movie-card-wrapper {
+  overflow: hidden;
+}
+
+.movie-card-container {
+  width: auto;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 1024px) {
+  .movie-card-wrapper {
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+}

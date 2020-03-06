@@ -1,0 +1,19 @@
+.movies-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 10rem;
+  grid-row-gap: 5rem;
+}
+
+@media only screen and (max-width: 1366px) {
+  .movies-grid-container {
+    grid-template-columns: repeat(1, auto);
+    grid-column-gap: 0;
+  }
+  .movies-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

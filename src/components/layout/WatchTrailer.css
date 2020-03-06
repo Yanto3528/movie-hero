@@ -1,0 +1,35 @@
+.trailer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.trailer-container {
+  width: 60%;
+}
+
+.trailer-heading {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .trailer-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .trailer-container {
+    width: 100%;
+  }
+  .trailer-heading {
+    font-size: 2rem;
+  }
+}
