@@ -8,7 +8,7 @@ const Details = props => {
       <h3>{props.header}</h3>
       <p>
         {props.isRating && <i className="fas fa-star"></i>}
-        {props.content}
+        <span>{props.content}</span>
       </p>
     </div>
   );

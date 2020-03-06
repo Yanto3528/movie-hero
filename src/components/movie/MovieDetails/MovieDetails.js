@@ -32,7 +32,9 @@ const MovieDetails = ({ movie, credits }) => {
             />
             <Details
               header="Languages"
-              content={movie.spoken_languages.map(language => language.name)}
+              content={movie.spoken_languages.map(
+                language => `${language.name} `
+              )}
             />
             <Details
               header="Budget"
