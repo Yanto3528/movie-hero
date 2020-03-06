@@ -11,7 +11,7 @@ const Navbar = () => {
   };
   return (
     <nav className="navbar">
-      <div className="container">
+      <div className="container navbar-container">
         <div className="navbar-content">
           <Link to="/">
             <img src={logo} alt="" className="logo" />
@@ -24,15 +24,18 @@ const Navbar = () => {
               <div></div>
             </div>
             <div className="navbar-list">
-              <Link to="/" className="navbar-list-item">
+              <a href="/" className="navbar-list-item">
                 Home
-              </Link>
-              <Link to="/" className="navbar-list-item">
-                Movie
-              </Link>
-              <Link to="/" className="navbar-list-item">
-                Categories
-              </Link>
+              </a>
+              <a href="/movie/list/now-playing/1" className="navbar-list-item">
+                Now Playing
+              </a>
+              <a href="/movie/list/upcoming/1" className="navbar-list-item">
+                Upcoming
+              </a>
+              <a href="/movie/list/popular/1" className="navbar-list-item">
+                Popular
+              </a>
             </div>
           </div>
         </div>

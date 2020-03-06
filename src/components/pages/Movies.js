@@ -59,10 +59,6 @@ const Movies = ({
     //eslint-disable-next-line
   }, []);
 
-  if (currentPage > totalPages) {
-    return <Redirect to={NotFound} />;
-  }
-
   if (loading) {
     return <Loading />;
   }

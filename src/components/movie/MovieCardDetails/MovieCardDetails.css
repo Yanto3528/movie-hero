@@ -76,6 +76,12 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .movie-card-details-overview {
+    height: 14rem;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .movie-card-details-overview {
     height: 10rem;
