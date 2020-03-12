@@ -1,5 +1,6 @@
 .movie-slider-container {
   position: relative;
+  margin-right: 1rem;
 }
 
 .movie-card-wrapper {
@@ -17,5 +18,13 @@
   .movie-card-wrapper {
     overflow: hidden;
     overflow-x: scroll;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .movie-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

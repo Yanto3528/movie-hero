@@ -6,7 +6,7 @@ import MovieContext from "../../context/movie/movieContext";
 import "./MovieCard.css";
 import convertToUrlString from "../../utils/ConvertToUrlString";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = React.forwardRef(({ movie }, ref) => {
   const movieContext = useContext(MovieContext);
   const { getTrailer, toggleIsPlayVideo, genres } = movieContext;
   let genresObj;
@@ -22,7 +22,7 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
-    <div className="movie-card">
+    <div ref={ref} className="movie-card">
       <div className="image-overlay"></div>
       <img
         className="poster"
@@ -52,6 +52,6 @@ const MovieCard = ({ movie }) => {
       <i className="far fa-play-circle play-video" onClick={playVideo}></i>
     </div>
   );
-};
+});
 
 export default MovieCard;

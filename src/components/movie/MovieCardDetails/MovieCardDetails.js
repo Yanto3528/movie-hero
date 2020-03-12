@@ -11,7 +11,7 @@ const MovieCardDetails = ({ movie, genres }) => {
   );
   return (
     <div className="movie-card-details">
-      <Link to={`/movie/${convertToUrlString(movie.title)}`}>
+      <Link to={`/movie/${movie.id}/${convertToUrlString(movie.title)}`}>
         <img
           src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`}
           alt=""
@@ -34,7 +34,13 @@ const MovieCardDetails = ({ movie, genres }) => {
           <div className="divider"></div>
           <div className="movie-card-details-footer">
             <span>
-              <i className="far fa-calendar-alt"></i> {year}
+              <i className="far fa-calendar-alt"></i>{" "}
+              <a
+                className="movie-genre"
+                href={`/movie/released-year/${year}/1`}
+              >
+                {year}
+              </a>
             </span>
             <span>
               <i className="fas fa-tags"></i>

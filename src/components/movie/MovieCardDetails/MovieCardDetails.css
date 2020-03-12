@@ -5,6 +5,10 @@
   grid-column-gap: 2rem;
 }
 
+.movie-card-details > a {
+  height: 100%;
+}
+
 .movie-card-details img {
   height: 100%;
   width: 100%;
@@ -38,6 +42,7 @@
   font-size: 1.6rem;
   overflow: hidden;
   width: 95%;
+  height: 14rem;
 }
 
 .movie-card-details-bottom {
@@ -64,7 +69,13 @@
   margin-right: 2rem;
 }
 
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 1024px) {
+  .movie-card-details-overview {
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .movie-card-details-title {
     font-size: 2rem;
   }
@@ -76,24 +87,18 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .movie-card-details-overview {
-    height: 14rem;
-  }
-}
-
 @media only screen and (max-width: 600px) {
   .movie-card-details-overview {
-    height: 10rem;
+    height: 8rem;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .movie-card-details-title {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .movie-card-details-overview {
-    font-size: 1.2rem;
-    height: 8rem;
+    font-size: 1rem;
+    height: 9rem;
   }
 }

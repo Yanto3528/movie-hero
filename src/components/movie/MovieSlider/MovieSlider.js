@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, createRef } from "react";
 
 import MovieCard from "../MovieCard/MovieCard";
 import Title from "../../layout/Title";
@@ -8,18 +8,32 @@ import "./MovieSlider.css";
 const MovieSlider = ({ movies, title, path }) => {
   const [movieIndex, setMovieIndex] = useState(0);
   const [curPos, setCurPos] = useState(0);
+  const cardRef = createRef(null);
+  let width;
+  let margin;
 
   const nextMovie = () => {
+    width = cardRef.current.offsetWidth / 10;
+    margin =
+      parseInt(
+        window.getComputedStyle(cardRef.current).marginRight.split("px")[0]
+      ) / 10;
     if (movieIndex <= movies.length - 5) {
       setMovieIndex(curState => curState + 1);
-      setCurPos(curState => curState + 43);
+      setCurPos(curState => curState + width + margin);
     }
+    console.log(cardRef);
   };
 
   const prevMovie = () => {
+    width = cardRef.current.offsetWidth / 10;
+    margin =
+      parseInt(
+        window.getComputedStyle(cardRef.current).marginRight.split("px")[0]
+      ) / 10;
     if (movieIndex > 0) {
       setMovieIndex(curState => curState - 1);
-      setCurPos(curState => curState - 43);
+      setCurPos(curState => curState - width - margin);
     }
   };
   return (
@@ -32,7 +46,7 @@ const MovieSlider = ({ movies, title, path }) => {
             style={{ transform: `translate(-${curPos}rem)` }}
           >
             {movies.map(movie => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard ref={cardRef} key={movie.id} movie={movie} />
             ))}
           </div>
         </div>

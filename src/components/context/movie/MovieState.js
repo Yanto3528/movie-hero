@@ -9,6 +9,7 @@ import {
   SET_PLAY_VIDEO,
   GET_SEARCH_MOVIES,
   GET_GENRES_BASED_MOVIES,
+  GET_MOVIES_BY_YEAR,
   GET_TRAILER,
   GET_MOVIE,
   GET_CREDITS,
@@ -25,6 +26,7 @@ const MovieState = props => {
     upcomingMovies: [],
     popularMovies: [],
     searchMovieList: [],
+    moviesByYear: [],
     isPlayVideo: false,
     loading: true,
     trailerVideo: {},
@@ -87,6 +89,27 @@ const MovieState = props => {
     dispatch({
       type: GET_GENRES_BASED_MOVIES,
       payload: { results: genreMovieRes.data.results, pages }
+    });
+  };
+
+  const getMoviesByYear = async (year, pageNumber) => {
+    setLoading(true);
+    const res = await axios.get(
+      `https://api.themoviedb.org/3/discover/movie?`,
+      {
+        params: {
+          api_key: "1f12e4975af13dde70c38f15fab38784",
+          language: "en-US",
+          page: pageNumber.toString(),
+          sort_by: "popularity.desc",
+          primary_release_year: year
+        }
+      }
+    );
+    const pages = res.data.total_pages;
+    dispatch({
+      type: GET_MOVIES_BY_YEAR,
+      payload: { results: res.data.results, pages }
     });
   };
 
@@ -162,6 +185,7 @@ const MovieState = props => {
         popularMovies: state.popularMovies,
         genreMovies: state.genreMovies,
         searchMovieList: state.searchMovieList,
+        moviesByYear: state.moviesByYear,
         isPlayVideo: state.isPlayVideo,
         trailerVideo: state.trailerVideo,
         movie: state.movie,
@@ -176,7 +200,8 @@ const MovieState = props => {
         getTrailer,
         getMovie,
         getCredits,
-        setLoading
+        setLoading,
+        getMoviesByYear
       }}
     >
       {props.children}

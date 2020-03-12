@@ -130,6 +130,12 @@ ul {
   }
   .prev-movie,
   .next-movie {
-    display: none;
+    background-color: transparent;
+  }
+  .next-movie {
+    transform: translate(20%, -50%);
+  }
+  .prev-movie {
+    transform: translate(-20%, -50%);
   }
 }

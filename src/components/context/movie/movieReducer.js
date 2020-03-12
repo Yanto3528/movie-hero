@@ -8,7 +8,8 @@ import {
   GET_TRAILER,
   GET_MOVIE,
   SET_LOADING,
-  GET_CREDITS
+  GET_CREDITS,
+  GET_MOVIES_BY_YEAR
 } from "../types";
 
 export default (state, action) => {
@@ -44,6 +45,13 @@ export default (state, action) => {
       return {
         ...state,
         genreMovies: action.payload.results,
+        totalPages: action.payload.pages,
+        loading: false
+      };
+    case GET_MOVIES_BY_YEAR:
+      return {
+        ...state,
+        moviesByYear: action.payload.results,
         totalPages: action.payload.pages,
         loading: false
       };
