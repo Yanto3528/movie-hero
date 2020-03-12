@@ -47,11 +47,6 @@
 .movie-card:hover .poster {
   transform: scale(1.1);
 }
-
-/* .movie-card:not(:last-child) {
-  margin-right: 8rem;
-} */
-
 .movie-card {
   margin-right: 8rem;
 }
@@ -107,5 +102,8 @@
   }
   .movie-card {
     margin-right: 0;
+  }
+  .movie-card:hover .play-video {
+    display: none;
   }
 }

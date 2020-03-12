@@ -9,8 +9,6 @@ const Video = ({ trailerVideo }) => {
   const movieContext = useContext(MovieContext);
   const { toggleIsPlayVideo } = movieContext;
   const opts = {
-    // height: "860",
-    // width: "1650",
     playerVars: {
       autoplay: 1
     }

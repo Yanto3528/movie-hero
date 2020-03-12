@@ -23,11 +23,12 @@ const MovieCard = React.forwardRef(({ movie }, ref) => {
 
   return (
     <div ref={ref} className="movie-card">
-      <div className="image-overlay"></div>
+      <div onClick={playVideo} className="image-overlay"></div>
       <img
         className="poster"
         src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`}
         alt=""
+        onClick={playVideo}
       />
       <div className="movie-card-content">
         <i className="fas fa-star"></i> {movie.vote_average}/10
