@@ -4,7 +4,7 @@ import Loading from "../layout/Loading";
 
 import MovieContext from "../context/movie/movieContext";
 
-import MovieList from "./MovieList";
+import MovieList from "../movie/MovieList/MovieList";
 
 const Movies = ({
   match: {

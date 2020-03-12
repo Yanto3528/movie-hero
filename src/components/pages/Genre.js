@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState, Fragment } from "react";
 
 import MovieContext from "../context/movie/movieContext";
 
-import MovieList from "./MovieList";
+import MovieList from "../movie/MovieList/MovieList";
 import Loading from "../layout/Loading";
 
 const Genre = ({

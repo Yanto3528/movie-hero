@@ -14,7 +14,7 @@
 }
 
 .detail i {
-  color: #ffc000;
+  color: var(--star-color);
   margin-right: 0.5rem;
 }
 

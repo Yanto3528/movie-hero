@@ -51,7 +51,7 @@
 }
 
 .rating i {
-  color: #ffc000;
+  color: var(--star-color);
 }
 
 .divider {

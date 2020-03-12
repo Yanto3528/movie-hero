@@ -1,9 +1,9 @@
 import React, { Fragment, useContext } from "react";
 
-import MovieContext from "../context/movie/movieContext";
+import MovieContext from "../../context/movie/movieContext";
 
-import MoviesGrid from "../movie/MoviesGrid/MoviesGrid";
-import Pagination from "../layout/Pagination";
+import MoviesGrid from "../MoviesGrid/MoviesGrid";
+import Pagination from "../../layout/Pagination";
 
 const MovieList = ({ movies, currentPage, name, path, availablePages }) => {
   const movieContext = useContext(MovieContext);

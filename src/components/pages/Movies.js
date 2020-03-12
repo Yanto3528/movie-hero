@@ -9,7 +9,7 @@ import {
   GET_UPCOMING_MOVIES
 } from "../context/types";
 
-import MovieList from "./MovieList";
+import MovieList from "../movie/MovieList/MovieList";
 
 const Movies = ({
   match: {

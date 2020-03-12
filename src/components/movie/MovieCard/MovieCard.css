@@ -61,7 +61,7 @@
 }
 
 .movie-card-content i {
-  color: #ffc000;
+  color: var(--star-color);
 }
 
 .movie-card-title {
